@@ -1,17 +1,17 @@
 import math
 
 def Sort(Num):
+    Solution = list()
     for n in range(len(Num)):
         Place, Base, Size = n, 0, math.ceil(n/2) 
         while Size > 0:
-            if Num[Place-Size]>Num[n]:
+            if Solution[Place-Size]>Num[n]:
                 Place = Place - Size
             else:
                 Base = Base + Size
             Size=math.ceil((Place - Base)/2) 
-        Num.insert(Place, Num[n])
-        del Num[n+1]
-    print(Num)
+        Solution.insert(Place, Num[n])
+    print(Solution)
 
 Test1=[3, 7, 2, 8, 11, 74, 2]
 Test2=[3,47,22,81,113,54,2,81,78,1,77,222,7478,21]
