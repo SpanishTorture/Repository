@@ -1,7 +1,7 @@
 def Sort(Num):
     Solution = [None]*(max(Num)+1)
 
-    #Converts the number to a string 
+    #Converts the number to a string and assigns string to Solution
     for n in range(len(Num)):
         if Solution[Num[n]]==None:
             Solution[Num[n]]=str(Num[n])
