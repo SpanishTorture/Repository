@@ -18,7 +18,7 @@ def Check(Test):
     for n in range(1,len(Test)):
         if Test[n]<Test[n-1]:
             print ("Fail")
-            return False
+            return
     print("Sucess")
 
 #Tests
