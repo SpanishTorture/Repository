@@ -49,7 +49,7 @@ def game(number):
         history[sign] += 1
         score[judge(sign,computer_sign)] += 1
 
-    #sees if 
+    #prints success/failure
     if score[2]/count[0] < 1/3:
         print("Failure")
     else:

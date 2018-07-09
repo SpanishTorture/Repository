@@ -11,20 +11,23 @@ print("Choices: \n 0 = Rock \n 1 = Paper \n 2 = Scissors \n 3= exit")
 
 #Returns game result
 def judge(sign_1, sign_2):
-    print(sign_1,sign_2)
     result = sign_1 - sign_2
     if abs(result) > 1:
         result = int(-result/2)
     return result
 
-#Strategy. Based on opponent's history, probability of each sign scales with the frequency of the sign it defeats. 
+#Strategy. Based on opponent's history, probability of each sign scales with the frequency of the sign it defeats. Chooses rock as first move.
 def stratagy():
-    choice = random.randint(0,100)
-    if choice < 100*history[2]/count[0]:
+    if count[0]==1:
         return 0
-    if choice > 100*(1-history[0]/count[0]):
+    choice = random.uniform(0,1)
+    if choice < history[2]/(count[0]-1):
+        return 0
+    if choice > (1-history[0]/(count[0]-1)):
         return 1
     return 2
+
+#takes in user input
 def game():
     count[0] += 1
     sign = int(input(""))
