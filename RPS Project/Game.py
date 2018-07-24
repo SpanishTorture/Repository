@@ -18,7 +18,7 @@ def judge(sign_1, sign_2):
 
 #Strategy. Based on opponent's history, probability of each sign scales with the frequency of the sign it defeats. Chooses rock as first move.
 def stratagy():
-    if count[0]==1:
+    if count[0] == 1:
         return 0
     choice = random.uniform(0,1)
     if choice < history[2]/(count[0]-1):
